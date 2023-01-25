@@ -4,6 +4,7 @@ public class Node<T extends Comparable<T>>
 {
     private Node<T> left;
     private Node<T> right;
+    private Node<T> parent;
     private T value;
     private int height;
 
@@ -11,6 +12,7 @@ public class Node<T extends Comparable<T>>
     {
         this.left = null;
         this.right = null;
+        this.parent = null;
         this.value = value;
         this.height = 1;
     }
@@ -35,6 +37,16 @@ public class Node<T extends Comparable<T>>
         return this.right;
     }
 
+    public Node<T> parent()
+    {
+        return this.parent;
+    }
+
+    public void parent(Node<T> parent)
+    {
+        this.parent = parent;
+    }
+
     public void left(Node<T> left)
     {
         this.left = left;
@@ -43,6 +55,16 @@ public class Node<T extends Comparable<T>>
     public void right(Node<T> right)
     {
         this.right = right;
+    }
+
+    public int height()
+    {
+        return this.height;
+    }
+
+    public void height(int height)
+    {
+        this.height = height;
     }
 
     public boolean isGreaterThan(T value)
@@ -73,5 +95,15 @@ public class Node<T extends Comparable<T>>
     public boolean hasRightChild()
     {
         return this.right != null;
+    }
+
+    public boolean isLeftChildOf(Node<T> node)
+    {
+        return node.left == this;
+    }
+
+    public boolean isRightChildOf(Node<T> node)
+    {
+        return node.right == node;
     }
 }
