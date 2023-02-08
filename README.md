@@ -1,6 +1,8 @@
 # Árvores
 
 ## 1 Árvore Binária de Busca
+![image](https://user-images.githubusercontent.com/67767706/217406548-c8bc019f-a264-4196-9dc6-aa7ecd2eb72f.png)
+
 ### 1.1 Propriedades
 - Cada nó deve ter no máximo 2 filhos;
 - O filho esquerdo de um nó sempre é menor que o próprio nó;
@@ -17,6 +19,8 @@
 3. Se o nó a ser removido for encontrado e possuir apenas um 1 filho, fazer seu pai apontar para seu filho;
 4. Se o nó a ser removido for encontrado e possuir 2 filhos, primeiro é preciso encotrar o menor nó da sua sub-árvore direita, que seria seu sucessor em ordem. Depois é necessário substituir o nó atual pelo seu sucessor e remover o sucessor de sua posição original;
 ## 2 Árvore Rubro-Negra
+![image](https://user-images.githubusercontent.com/67767706/217406468-7c7f60e4-8445-4c7e-81c2-258f83d82669.png)
+
 ### 2.1 Propriedades
 - Extende as propriedades na árvore binária de busca;
 - Todo nó deve ser preto ou vermelho;
@@ -41,6 +45,8 @@
    - Balancear esta árvore equivale a balancear uma árvore 2-3, que é mais simples do que uma AVL tree ou rubro-negra convencional
 ###  
 ## 3 Árvore AVL
+![image](https://user-images.githubusercontent.com/67767706/217406798-d0797b02-4bc7-46ce-88bb-10ed1064d2f0.png)
+
 ### 3.1 Propriedades
 - Extende as propriedades na árvore binária de busca;
 - Cada nó é associado a um fator de balanceamento que é calculado a partir da subtração da altura da sub-árvore direita pela sub-árvore esquerda;
@@ -63,6 +69,8 @@
 4. Se o fator de balanceamento do nó atual e do seu fillho direito forem, respectivamente, < -1 e <= 0, rotacionar para a esquerda, senão, rotacionar para a direita e depois a para esquerda;   
 
 ## 4 Árvore B
+![image](https://user-images.githubusercontent.com/67767706/217406986-e69c1592-d471-4234-a95f-75422a463412.png)
+
 ### 4.1 Propriedades
 - Para cada nó, as chaves são armazenadas em ordem crescente;
 - Se n é a ordem da árvore: 
