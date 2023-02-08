@@ -33,7 +33,13 @@
     - Se o irmão for vermelho, mudar a cor do nó pai e do irmão, e se o nó avo não for a raiz, mudar a cor do avo também;
     - Se o irmão for preto ou nulo, realizar as rotaçoes apropriadas e recolorir;
         - A rotação a ser feita depende do caminho do nó inserido até o seu avo;
-
+### Árvore Rubro-Negra caída para esquerda LLRB
+   - Possuí as mesmas propriedades que a Árvore Rubro-Negra tradicional
+   - Propriedade extra: se um nó é vermelho, então ele é o filho ESQUERDO do seu pai
+   - Trás uma implementação mais simples: os nós vermelhos são sempre os filhos à esquerda
+   - Sua implementação corresponde a implementação de uma árvore 2-3, se considerarmos que o nó "vermelho" sempre será o "menor" de um nó contendo "dois valores" e "três sub-árvores
+   - Balancear esta árvore equivale a balancear uma árvore 2-3, que é mais simples do que uma AVL tree ou rubro-negra convencional
+###  
 ## 3 Árvore AVL
 ### 3.1 Propriedades
 - Extende as propriedades na árvore binária de busca;
