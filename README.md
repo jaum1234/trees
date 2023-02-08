@@ -1,6 +1,8 @@
 # Árvores
 
 ## 1 Árvore Binária de Busca
+![image](https://user-images.githubusercontent.com/67767706/217406548-c8bc019f-a264-4196-9dc6-aa7ecd2eb72f.png)
+
 ### 1.1 Propriedades
 - Cada nó deve ter no máximo 2 filhos;
 - O filho esquerdo de um nó sempre é menor que o próprio nó;
@@ -17,6 +19,8 @@
     - Encotrar seu sucessor na sub-árvore direita. 
     - Subtitui-lo por seu sucessor e remover o sucessor de sua posição original;
 ## 2 Árvore Rubro-Negra
+![image](https://user-images.githubusercontent.com/67767706/217406468-7c7f60e4-8445-4c7e-81c2-258f83d82669.png)
+
 ### 2.1 Propriedades
 - Extende as propriedades na árvore binária de busca;
 - Todo nó deve ser preto ou vermelho;
@@ -65,7 +69,16 @@
 ### 2.3 Aplicações
 - Kernel do linux;
 
+### Árvore Rubro-Negra caída para esquerda LLRB
+   - Possuí as mesmas propriedades que a Árvore Rubro-Negra tradicional
+   - Propriedade extra: se um nó é vermelho, então ele é o filho ESQUERDO do seu pai
+   - Trás uma implementação mais simples: os nós vermelhos são sempre os filhos à esquerda
+   - Sua implementação corresponde a implementação de uma árvore 2-3, se considerarmos que o nó "vermelho" sempre será o "menor" de um nó contendo "dois valores" e "três sub-árvores
+   - Balancear esta árvore equivale a balancear uma árvore 2-3, que é mais simples do que uma AVL tree ou rubro-negra convencional
+###  
 ## 3 Árvore AVL
+![image](https://user-images.githubusercontent.com/67767706/217406798-d0797b02-4bc7-46ce-88bb-10ed1064d2f0.png)
+
 ### 3.1 Propriedades
 - Extende as propriedades na árvore binária de busca;
 - Cada nó é associado a um fator de balanceamento que é calculado a partir da subtração da altura da sub-árvore direita pela sub-árvore esquerda;
@@ -92,6 +105,8 @@
 - Por possuir um balanceamento mais rígido, a Árvore AVL facilita terefas que priorizem a busca;
 
 ## 5 Árvore B
+![image](https://user-images.githubusercontent.com/67767706/217406986-e69c1592-d471-4234-a95f-75422a463412.png)
+
 ### 5.1 Propriedades
 - Para cada nó, as chaves são armazenadas em ordem crescente;
 - Se n é a ordem da árvore: 
