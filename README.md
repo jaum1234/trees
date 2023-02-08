@@ -24,6 +24,16 @@
 - Toda folha (NIL) é preta;
 - Um nó vermelho só pode ter filhos pretos;
 - Para cada nó, qualquer caminho desse nó até uma de duas folhas (NILs) deve conter o mesmo número de nós pretos;
+
+### 2.2 Operações
+#### 2.2.1 Inserção
+- Se a árvore estiver vazia, basta criar um nó raiz de cor preta;
+- Se a árvore não estiver vazia, basta inserir o novo nó como uma folha de cor vermelha;
+- Se o pai de um nó recém inserido for vermelho, basta verificar a cor do irmão do nó pai:
+    - Se o irmão for vermelho, mudar a cor do nó pai e do irmão, e se o nó avo não for a raiz, mudar a cor do avo também;
+    - Se o irmão for preto ou nulo, realizar as rotaçoes apropriadas e recolorir;
+        - A rotação a ser feita depende do caminho do nó inserido até o seu avo;
+
 ## 3 Árvore AVL
 ### 3.1 Propriedades
 - Extende as propriedades na árvore binária de busca;
@@ -80,3 +90,4 @@
 
 ### Aplicações
 - Otimizar o tempo de acesso a memória secundária (arquivos de sistema e bancos de dados);
+    - Consequencia do maior número de chaves que cada nó da árvore pode armazenar, o que reduz a altura da árvore e aumenta a velocidade de operaçoes como inserçao e deleçao;
