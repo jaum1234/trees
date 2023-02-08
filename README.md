@@ -8,14 +8,14 @@
 
 ### 1.2 Operações
 #### Inserção
-1. Se o valor a ser inserido for maior que o nó atual, ir para a direita, se for menor, ir para a esquerda;
-2. Se o nó atual for vazio, criar um novo nó com o valor a ser inserido;
+- Inserir o novo nó como uma folha;
 
 #### Deleção
-1. Se o valor a ser removido for maior que o nó atual, ir para a direita, se for menor, ir para a esquerda;
-2. Se o nó a ser removido for encotrado e não possuir uma folha, fazer seu pai apontar para null;
-3. Se o nó a ser removido for encontrado e possuir apenas um 1 filho, fazer seu pai apontar para seu filho;
-4. Se o nó a ser removido for encontrado e possuir 2 filhos, primeiro é preciso encotrar o menor nó da sua sub-árvore direita, que seria seu sucessor em ordem. Depois é necessário substituir o nó atual pelo seu sucessor e remover o sucessor de sua posição original;
+- Se o nó for uma folha, basta remove-lo;
+- Se o nó possuir apenas um 1 filho, basta fazer seu pai apontar para seu filho;
+- Se o nó  possuir 2 filhos:
+    - Encotrar seu sucessor na sub-árvore direita. 
+    - Subtitui-lo por seu sucessor e remover o sucessor de sua posição original;
 ## 2 Árvore Rubro-Negra
 ### 2.1 Propriedades
 - Extende as propriedades na árvore binária de busca;
@@ -33,6 +33,37 @@
     - Se o irmão for vermelho, mudar a cor do nó pai e do irmão, e se o nó avo não for a raiz, mudar a cor do avo também;
     - Se o irmão for preto ou nulo, realizar as rotaçoes apropriadas e recolorir;
         - A rotação a ser feita depende do caminho do nó inserido até o seu avo;
+
+#### 2.2.2 Deleção
+- Se nó a ser removido possuir cor vermelha:
+    - Se for uma folha, basta remove-lo;
+    - Se possuir 1 filho, substitu-lo por seu filho;
+    - Se possuir 2 filhos, substitui-lo por seu sucessor na árvore direita;
+- Se o nó for preto:
+    - Se possuir 1 filho, substitui-lo pelo seu filho;
+    - Se possuir 2 filhos, substitui-lo pelo seu sucessor na árvore direita.
+    - Se o filho for um NIL, temos um problema de "duplo preto";
+        - Se o irmao for preto e possuir filhos pretos:
+            - Se o pai do nó for preto, torna-lo "duplo preto"
+            - Se o pai do nó for vermelho, torna-lo preto;
+            - Tornar o irmão vermelho;
+        - Se o irmao for preto e possuir 1 filho vermelho próximo do duplo preto:
+            - Tornar o filho do irmao preto;
+            - Tornar o irmao vermelho;
+            - Rotacionar o irmao na direçao oposta do "duplo preto";
+        - Se o irmao for preto e possuir 1 filho vermelho distante do duplo preto:
+            - Trocar a cor do pai pela do irmao;
+            - Rotacionar o pai na direçao do "duplo preto";
+            - Tornar o "duplo preto" preto;
+            - Tornar o antigo filho vermelho preto; 
+        - Se o irmao for vermelho:
+            - Se o pai for preto, torna-lo vermelho;
+            - Tornar o irmao preto;
+            - Rotacionar o pai na direçao do "duplo preto";
+- Se a raiz for "duplo preta", basta torna-la preta;
+
+### 2.3 Aplicações
+- Kernel do linux;
 
 ## 3 Árvore AVL
 ### 3.1 Propriedades
@@ -56,8 +87,12 @@
 3. Se o fator de balanceamento do nó atual e do seu filho esquerdo forem, respectivamente, > 1 e => 0, rotacionar para a direita, senão, rotacionar para a esquerda e depois para a direita;
 4. Se o fator de balanceamento do nó atual e do seu fillho direito forem, respectivamente, < -1 e <= 0, rotacionar para a esquerda, senão, rotacionar para a direita e depois a para esquerda;   
 
-## 4 Árvore B
-### 4.1 Propriedades
+## 4 Árvore Rubro-Negra vs Árvore AVL
+- O balanceamento na Árvore Rubro-Negra é menos rígido, o que facilita tarefas que priorizem a inserção ou remoção;
+- Por possuir um balanceamento mais rígido, a Árvore AVL facilita terefas que priorizem a busca;
+
+## 5 Árvore B
+### 5.1 Propriedades
 - Para cada nó, as chaves são armazenadas em ordem crescente;
 - Se n é a ordem da árvore: 
     - Então cada nó deve conter no máximo n - 1 chaves;
@@ -67,14 +102,14 @@
 - Todas as folhas devem estar no mesmo nível;
 - Se n >= 1, então para qualquer n-chave de altura h e grau mínimo >= 2, h >= logt (n+1)/2
 
-### 4.2 Operações
-#### 4.2.1 Inserção
+### 5.2 Operações
+#### 5.2.1 Inserção
 1. Varrer a árvore até encontrar a folha apropriada para a inserção. A chave a ser inserido deve ser comparado com as chaves de cada nó, seguindo o mesmo príncipio da árvore binária de busca ao passar para o próximo nó;
 2. Se a folha contém menos do que n - 1 chaves, inserir a nova chave em ordem crescente;
 3. Senão, inserir a chave em ordem crescente, dividir o nó ao meio, criando dois novos nós, e subir o elemento mediano para o nó pai do nó atual;
 4. Se o nó pai infringir a propriedade da árvore, repetir o passo 3;
 
-#### 4.2.2 Deleção
+#### 5.2.2 Deleção
 1. Varrer a árvore até encontrar a chave que se deseja remover;
 2. Se a chave a ser removida se encontrar em uma folha;
 3. Se a folha possuir mais que o mínimo de chaves, simplesmente remover a chave;
@@ -88,6 +123,6 @@
 11. Se o filho direito tiver mais que o mínimo de chaves, substituir a chave removido pelo seu sucessor no filho direito;
 11. Se nenhum dos filhos tiver mais que o mínimo de chaves, unir os dois filhos;
 
-### Aplicações
+### 5.3 Aplicações
 - Otimizar o tempo de acesso a memória secundária (arquivos de sistema e bancos de dados);
     - Consequencia do maior número de chaves que cada nó da árvore pode armazenar, o que reduz a altura da árvore e aumenta a velocidade de operaçoes como inserçao e deleçao;
