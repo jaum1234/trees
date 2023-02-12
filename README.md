@@ -35,6 +35,10 @@
 - Se a árvore não estiver vazia, basta inserir o novo nó como uma folha de cor vermelha;
 - Se o pai de um nó recém inserido for vermelho, basta verificar a cor do irmão do nó pai:
     - Se o irmão for vermelho, mudar a cor do nó pai e do irmão, e se o nó avo não for a raiz, mudar a cor do avo também;
+        - ![image](https://user-images.githubusercontent.com/67767706/218329435-c7057e07-c5db-49ad-bb89-dd5f443f5b47.png)
+        - ![image](https://user-images.githubusercontent.com/67767706/218329467-1ec2a312-ca62-4d59-bbaf-f2cf407a57c2.png)
+
+
     - Se o irmão for preto ou nulo, realizar as rotaçoes apropriadas e recolorir;
         - A rotação a ser feita depende do caminho do nó inserido até o seu avo;
 
